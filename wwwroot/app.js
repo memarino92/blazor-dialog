@@ -1,4 +1,4 @@
-let AppFunctions = {};
+var AppFunctions = {};
 
 AppFunctions.showModal = (element) => element.showModal();
-AppFunctions.closeModal = (element) => element.closeModal();
+AppFunctions.closeModal = (element) => element.close();
