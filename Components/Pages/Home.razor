@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button @onclick=OpenModal>Open dialog</button>
+
+<Dialog @ref=Dialog>
+    <p>This is a dialog</p>
+    <button @onclick=CloseModal>Close dialog</button>
+</Dialog>
+
+@code {
+    public Dialog? Dialog { get; set; }
+    public async Task OpenModal() => await Dialog.ShowModal();
+    public async Task CloseModal() => await Dialog.CloseModal();
+}

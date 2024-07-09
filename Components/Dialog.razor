@@ -1,0 +1,15 @@
+@inject IJSRuntime JS
+
+<dialog @ref=Element>
+    @ChildContent
+</dialog>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    public ElementReference? Element { get; set; }
+
+    public async Task ShowModal() => await JS.InvokeVoidAsync("AppFunctions.showModal", Element);
+    public async Task CloseModal() => await JS.InvokeVoidAsync("AppFunctions.closeModal", Element);
+}
